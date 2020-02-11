@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import com.capgemini.medicalstoremanagement.dto.VisitorInfo;
 import com.capgemini.medicalstoremanagement.dto.VisitorMedicineInfo;
 import com.capgemini.medicalstoremanagement.factory.VisitorFactory;
+import com.capgemini.medicalstoremanagment.exception.OrderNotPossibleException;
 import com.capgemini.medicalstoremanagment.exception.TryToOrder;
 import com.capgemini.medicalstoremanagment.service.VisitorInterface;
 
@@ -30,15 +31,15 @@ public class VisitorController {
 			case 1: {
 				List<VisitorInfo> list = service.detailsInfo();
 				for (VisitorInfo m : list) {
-					log.info(m.getUserId());
-					log.info(m.getUserName());
-					log.info(m.getUserAddress());
-					log.info(m.getPincode());
-					log.info(m.getUserDob());
-					log.info(m.getUserDisease());
-					log.info(m.getMedicineId());
-					log.info(m.getMedbookingDate());
-					log.info(m.getUserBookingId());
+					log.info("UserId:" + m.getUserId());
+					log.info("UserName:" + m.getUserName());
+					log.info("UserAddress:"+ m.getUserAddress());
+					log.info("UserPincode:" + m.getPincode());
+					log.info("UserDob:"+ m.getUserDob());
+					log.info("UserDisease:" + m.getUserDisease());
+					log.info("UserMedicineId:" + m.getMedicineId());
+					log.info("UserMedBookingDate:" + m.getMedbookingDate());
+					log.info("UserBookingId" + m.getUserBookingId());
 					log.info("------------------------------------------------------");
 				}
 
@@ -48,12 +49,12 @@ public class VisitorController {
 
 				List<VisitorMedicineInfo> list1 = service.medicineInfo();
 				for (VisitorMedicineInfo m1 : list1) {
-					log.info(m1.getMedicineId());
-					log.info(m1.getMedicineName());
-					log.info(m1.getMedicineMfgDate());
-					log.info(m1.getMedicineExpDate());
-					log.info(m1.getMedicinePrice());
-					log.info(m1.getMedicineCompany());
+					log.info("MedicineId:" + m1.getMedicineId());
+					log.info("MedicineName:" + m1.getMedicineName());
+					log.info("MedicineMfgDate:" + m1.getMedicineMfgDate());
+					log.info("MedicineExpDate:" + m1.getMedicineExpDate());
+					log.info("MedicinePrice:" + m1.getMedicinePrice());
+					log.info("MedicineCompany:" + m1.getMedicineCompany());
 					log.info("------------------------------------------------------");
 				}
 				break;
