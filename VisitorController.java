@@ -8,7 +8,6 @@ import com.capgemini.medicalstoremanagement.dto.VisitorInfo;
 import com.capgemini.medicalstoremanagement.dto.VisitorMedicineInfo;
 import com.capgemini.medicalstoremanagement.factory.VisitorFactory;
 import com.capgemini.medicalstoremanagment.exception.OrderNotPossibleException;
-import com.capgemini.medicalstoremanagment.exception.TryToOrder;
 import com.capgemini.medicalstoremanagment.service.VisitorInterface;
 
 public class VisitorController {
@@ -33,9 +32,9 @@ public class VisitorController {
 				for (VisitorInfo m : list) {
 					log.info("UserId:" + m.getUserId());
 					log.info("UserName:" + m.getUserName());
-					log.info("UserAddress:"+ m.getUserAddress());
+					log.info("UserAddress:" + m.getUserAddress());
 					log.info("UserPincode:" + m.getPincode());
-					log.info("UserDob:"+ m.getUserDob());
+					log.info("UserDob:" + m.getUserDob());
 					log.info("UserDisease:" + m.getUserDisease());
 					log.info("UserMedicineId:" + m.getMedicineId());
 					log.info("UserMedBookingDate:" + m.getMedbookingDate());
@@ -61,9 +60,8 @@ public class VisitorController {
 			}
 
 			case 3: {
-				TryToOrder trytoorder = new TryToOrder();
-				trytoorder.order("ertu");
-				log.info("------------------------------------------------------");
+				OrderNotPossibleException onpe = new OrderNotPossibleException();
+				log.info(onpe.getMessage());
 				break;
 			}
 			case 4:
